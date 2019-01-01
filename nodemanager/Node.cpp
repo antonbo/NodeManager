@@ -30,7 +30,7 @@ NodeManager::NodeManager(uint8_t sensor_count) {
 	// allocate block for all the sensors if sensor_count is provided
 	if (sensor_count > 0) sensors.allocateBlocks(sensor_count);
 	// setup serial port baud rate
-#ifndef CHIP_NRF5
+#if !defined(CHIP_NRF5) && !defined(MY_DISABLED_SERIAL)
 	MY_SERIALDEVICE.begin(MY_BAUD_RATE);
 #endif
 	// print out the version
