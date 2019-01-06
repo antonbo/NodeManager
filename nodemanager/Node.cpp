@@ -642,8 +642,8 @@ void NodeManager::loop() {
 #endif
 		debug(PSTR(LOG_SLEEP "SLEEP s=%d\n\n"),sleep_time);
 		// go to sleep
-		int interrupt = -1;
 #if NODEMANAGER_INTERRUPTS == ON
+		int interrupt = -1;
 		// setup interrupt pins
 		int interrupt_1_pin = _interrupt_1_mode == MODE_NOT_DEFINED ? INTERRUPT_NOT_DEFINED  : digitalPinToInterrupt(INTERRUPT_PIN_1);
 		int interrupt_2_pin = _interrupt_2_mode == MODE_NOT_DEFINED ? INTERRUPT_NOT_DEFINED  : digitalPinToInterrupt(INTERRUPT_PIN_2);
